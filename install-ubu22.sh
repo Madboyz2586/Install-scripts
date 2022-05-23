@@ -44,3 +44,8 @@ wget -qO- https://itai-nelken.github.io/weekly-box86-debs/debian/KEY.gpg | sudo 
 echo "Installing box86..."
 sudo apt install box86:armhf -y
 sudo systemctl restart systemd-binfmt
+
+echo "Installing Flathub"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+echo "Installing flathub apps"
