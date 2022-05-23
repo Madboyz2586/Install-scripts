@@ -26,7 +26,7 @@ echo "Installing pi-kiss"
 curl -sSL https://git.io/JfAPE | bash
 
 echo "Installing apps through apt"
-sudo apt install flatpak lmms krita chromium-browser git -y
+sudo apt install flatpak lmms chromium-browser git -y
 
 echo "Installing wallpapers"
 git clone https://github.com/Madboyz2586/Wallpapers.git /home/braydon/Pictures
@@ -49,3 +49,13 @@ echo "Installing Flathub"
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo "Installing flathub apps"
+flatpak install flathub org.olivevideoeditor.Olive -y
+flatpak install flathub com.sublimetext.three -y
+flatpak install flathub com.visualstudio.code -y
+flatpak install flathub io.openrct2.OpenRCT2 -y
+flatpak install flathub com.github.k4zmu2a.spacecadetpinball -y
+flatpak install flathub org.srb2.SRB2Kart -y
+flatpak install flathub org.srb2.SRB2 -y
+flatpak install flathub org.flameshot.Flameshot -y
+flatpak install flathub org.gimp.GIMP -y
+flatpak install flathub org.kde.krita -y
