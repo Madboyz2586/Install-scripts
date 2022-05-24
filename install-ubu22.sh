@@ -28,7 +28,7 @@ curl -sSL https://git.io/JfAPE | bash
 echo "Done"
 
 echo "Installing apps through apt"
-sudo apt install flatpak lmms chromium-browser git -y
+sudo apt install flatpak lmms chromium-browser git virt-manager qemu-system -y
 
 echo "Done"
 
