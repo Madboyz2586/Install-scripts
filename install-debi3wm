@@ -38,7 +38,7 @@ curl -sSL https://git.io/JfAPE | bash
 echo "Done"
 
 echo "Installing apps through apt"
-sudo apt install flatpak lmms chromium-browser virt-manager qemu-system firefox xfce4-terminal lightdm slick-greeter -y
+sudo apt install audacity gimp firefox-esr flatpak gparted imager mousepad gnome-disk-utility feh lmms chromium-browser virt-manager qemu-system firefox xfce4-terminal lightdm slick-greeter -y
 s
 echo "Done"
 
@@ -63,4 +63,12 @@ echo "Done"
 
 echo "Installing wallpapers"
 git clone https://github.com/Madboyz2586/Wallpapers.git /home/braydon/Pictures
-sudo mv /home/braydon/Pictures/Wallpapers/wallpapers /usr/share/backgrounds
+sudo mv /home/braydon/Pictures/Wallpapers/wallpapers/*.jpg /usr/share/backgrounds
+sudo mv /home/braydon/Pictures/Wallpapers/wallpapers/*.png /usr/share/backgrounds
+echo "Done"
+
+echo "Installing armcord"
+wget https://github.com/ArmCord/ArmCord/releases/download/v3.0.5/ArmCord_3.0.5_arm64.deb
+sudo dpkg -i ArmCord_3.0.5_arm64.deb
+sudo rm -rf ArmCord_3.0.5_arm64.deb
+echo "Done"
