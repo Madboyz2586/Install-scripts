@@ -1,0 +1,66 @@
+#!/bin/bash
+
+echo "updating and installing i3-gaps"
+sudo apt update && sudo apt upgrade -y
+
+echo "Done"
+
+echo "Installing i3-gaps"
+sudo apt install meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev -y
+mkdir files
+cd files
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+mkdir -p build && cd build
+meson ..
+ninja
+cd /home/braydon/files
+echo "Done"
+
+echo "Installing Picom
+sudo apt install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson -y
+git clone https://github.com/yshui/picom.git
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+ninja -C build install
+cd /home/braydon/
+echo "Done"
+
+echo "Installing pi-apps and pi-kiss"
+
+echo "Installing pi-apps"
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+
+echo "Installing pi-kiss"
+curl -sSL https://git.io/JfAPE | bash
+
+echo "Done"
+
+echo "Installing apps through apt"
+sudo apt install flatpak lmms chromium-browser virt-manager qemu-system firefox xfce4-terminal lightdm slick-greeter -y
+s
+echo "Done"
+
+echo "Installing Flathub"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+echo "Done"
+
+echo "Installing flathub apps"
+flatpak install flathub org.olivevideoeditor.Olive -y
+flatpak install flathub com.sublimetext.three -y
+flatpak install flathub com.visualstudio.code -y
+flatpak install flathub io.openrct2.OpenRCT2 -y
+flatpak install flathub com.github.k4zmu2a.spacecadetpinball -y
+flatpak install flathub org.srb2.SRB2Kart -y
+flatpak install flathub org.srb2.SRB2 -y
+flatpak install flathub org.flameshot.Flameshot -y
+flatpak install flathub org.gimp.GIMP -y
+flatpak install flathub org.kde.krita -y
+
+echo "Done"
+
+echo "Installing wallpapers"
+git clone https://github.com/Madboyz2586/Wallpapers.git /home/braydon/Pictures
+sudo mv /home/braydon/Pictures/Wallpapers/wallpapers /usr/share/backgrounds
